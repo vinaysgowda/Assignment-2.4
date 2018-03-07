@@ -1,0 +1,7 @@
+/*
+(a) Top 5 employees (employee id and employee name) with highest rating. 
+(In case two employees have same rating, employee with name coming first in dictionary should get preference) 
+*/
+
+LOAD 'employee_details' USING PigStorage(',') AS (emp_id:int, emp_name:chararray, emp_salary:int);
+emp_rating = order emp by rating,emp_name;
